@@ -20,9 +20,9 @@ class ConvHead(DepthBaseDecodeHead):
         self.input_transform = input_transform
         self.in_index = in_index
         self.upsample = upsample
-        self.conv1 = nn.Conv2d(self.channels, 128, kernel_size=3, padding=1, stride=1)
-        self.conv2 = nn.Conv2d(128, 64, kernel_size=3, padding=1, stride=1)
-        self.conv_depth = nn.Conv2d(64, 1, kernel_size=1, padding=0, stride=1)
+        self.conv1 = nn.Conv2d(self.channels, 64, kernel_size=3, padding=1, stride=1)
+        self.conv2 = nn.Conv2d(64, 32, kernel_size=3, padding=1, stride=1)
+        self.conv_depth = nn.Conv2d(32, 1, kernel_size=1, padding=0, stride=1)
         torch.nn.init.normal_(self.conv_depth.weight, mean=3, std=6)
         torch.nn.init.normal_(self.conv_depth.bias, mean=20, std=5)
 
